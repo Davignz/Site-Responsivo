@@ -23,7 +23,7 @@ body {
   cursor: pointer;
   display: none;
 }
-.hamburguer:after {
+.hamburguer:before {
   content: '';
   position: absolute;
   top: 55%;
@@ -47,11 +47,13 @@ body {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
+  align-items: center;
 }
 .menu a {
-  padding: 10px;
+  padding: 10px 15px;
   color: #c1c1c1;
   text-decoration: none;
+  display: block;
 }
 .menu a:hover {
   color: #fff;
@@ -103,7 +105,7 @@ h1 {
   grid-column: 2;
   border: 3px solid purple;
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 678px) {
   .hamburguer {
     display: block;
     z-index: 999;
@@ -112,6 +114,20 @@ h1 {
     position: fixed;
     top: 0;
     right: -100%;
+    height: 100vh;
+    margin: 0;
+    padding: 100px 20px;
+    flex-direction: column;
+    background-color: #222;
+    width: 100%;
+    text-align: center;
+    transition: .3s ease;
+  }
+  .menu li a{
+    margin: 10px 5px;
+  }
+  .menu.active{
+    right: 0;
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);
